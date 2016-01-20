@@ -48,6 +48,7 @@ class listener implements EventSubscriberInterface
 
 	public function hide_bbcode ($event)
 	{
+		global $request;
 		$fid = $request->variable ('f', 0);
 		$sql_ary = $event['sql_ary'];
 		$auto = 0;
