@@ -53,10 +53,13 @@ class listener implements EventSubscriberInterface
 		$autom  = $this->auth->acl_get('m_', $fid);
 		$autoa  = $this->auth->acl_get('a_', $fid);
 		if ($autom)
+		{
 			$auto = 1;
+		}
 		if ($autoa)
+		{
 			$auto = 2;
-		// var_dump ($auto);
+		}
 		switch ($auto)
 		{
 			case 0 :
@@ -73,4 +76,3 @@ class listener implements EventSubscriberInterface
 	}
 
 }
-
