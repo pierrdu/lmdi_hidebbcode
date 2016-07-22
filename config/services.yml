@@ -2,7 +2,7 @@ services:
     lmdi.hidebbcode.listener:
         class: lmdi\hidebbcode\event\listener
         arguments:
-            - @user
-            - @auth
+            - '@user'
+            - '@auth'
         tags:
             - { name: event.listener }

@@ -37,8 +37,6 @@ class listener implements EventSubscriberInterface
 	/**
 	* Constructor
 	*
-	* @param \phpbb\controller\helper	$helper	Controller helper object
-	* @param \phpbb\template			$template	Template object
 	*/
 	public function __construct(\phpbb\user $user, \phpbb\auth\auth $auth)
 	{
