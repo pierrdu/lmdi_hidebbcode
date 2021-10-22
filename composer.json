@@ -2,15 +2,15 @@
 	"name": "lmdi/hidebbcode",
 	"type": "phpbb-extension",
 	"description": "Hides custom bbcodes according to user status",
-	"homepage": "http://www.insecte.org/ext/readme.txt",
-	"version": "1.0.3",
-	"time": "2016-07-22",
-	"license": "GPL-2.0",
+	"homepage": "https://www.insecte.org/ext/readme.txt",
+	"version": "1.0.4",
+	"time": "2021-10-21",
+	"license": "GPL-2.0-only",
 	"authors": [
 		{
 		"name": "Pierre Duhem",
 		"email": "pierre@duhem.com",
-		"homepage": "http://www.insecte.org/ext/readme.txt",
+		"homepage": "https://www.insecte.org/ext/readme.txt",
 		"role": "Extension Developer"
 		}
 	],
