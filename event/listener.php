@@ -54,15 +54,27 @@ class listener implements EventSubscriberInterface
 	public function hide_bbcode ($event)
 	{
 		$fid = request_var ('f', 0);
+		// No forum id...
 		if (!$fid)
 		{
 			$tid = request_var ('t', 0);
-			$sql = 'SELECT forum_id
-			FROM ' . TOPICS_TABLE . "
-			WHERE topic_id = $tid";
-			$result = $this->db->sql_query($sql);
-			$fid = (int) $this->db->sql_fetchfield('forum_id');
-			$this->db->sql_freeresult($result);
+			if ($tid)
+			{
+				$sql = 'SELECT forum_id
+				FROM ' . TOPICS_TABLE . "
+				WHERE topic_id = $tid";
+				$result = $this->db->sql_query($sql);
+				$fid = (int) $this->db->sql_fetchfield('forum_id');
+				$this->db->sql_freeresult($result);
+			}
+			else		// No topic id...
+			{
+				$pid = request_var ('p', 0);
+				$sql = "SELECT forum_id FROM " . POSTS_TABLE . " WHERE post_id = $pid";
+				$result = $this->db->sql_query($sql);
+				$fid = (int) $this->db->sql_fetchfield('forum_id');
+				$this->db->sql_freeresult($result);
+			}
 		}
 		$sql_ary = $event['sql_ary'];
 		$auto = 0;
